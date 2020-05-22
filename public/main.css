@@ -29,3 +29,16 @@ body {
     background-image: url(./images/cardback.jpg);
     background-size: contain;
 }
+
+#hand {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 100px;
+    height: 150px;
+    border: 1px black solid;
+    border-radius: 10px;
+    margin: 5px;
+}

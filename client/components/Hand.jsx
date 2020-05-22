@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Hand = () => {
+import Card from './Card'
+
+const Hand = (props) => {
   return (
-    <div id='hand'></div>
+    <div id='hand'>
+      {props.hand.map(card => <Card suit={card.suit} value={card.value} />)}
+    </div>
   )
 }
 
