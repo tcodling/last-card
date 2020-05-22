@@ -1,0 +1,17 @@
+body {
+    background-color: bisque;
+}
+
+#play {
+    width: 100px;
+    height: 150px;
+    border: 2px black dashed;
+    border-radius: 10px;
+}
+
+#deck {
+    width: 100px;
+    height: 150px;
+    border: 2px black solid;
+    border-radius: 10px;
+}
