@@ -10,8 +10,10 @@ class App extends React.Component {
     return (
       <>
       <h1>Last Card</h1>
-      <Play />
-      <Deck cards={cards} />
+      <div id='board'>
+        <Play />
+        <Deck cards={cards} />
+      </div>
       </>
     )
   }

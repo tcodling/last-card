@@ -1,17 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Press+Start+2P&family=VT323&display=swap');
+
 body {
     background-color: bisque;
+    font-family: 'Londrina Solid', cursive;
+    /* font-family: 'Press Start 2P', cursive; */
+    /* font-family: 'VT323', monospace; */
+}
+
+#board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #play {
     width: 100px;
     height: 150px;
-    border: 2px black dashed;
+    border: 1px black dashed;
     border-radius: 10px;
+    margin-right: 5px;
 }
 
 #deck {
     width: 100px;
     height: 150px;
-    border: 2px black solid;
+    border: 1px black solid;
     border-radius: 10px;
+    background-image: url(./images/cardback.jpg);
+    background-size: contain;
 }
