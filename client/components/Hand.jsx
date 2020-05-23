@@ -5,7 +5,7 @@ import Card from './Card'
 const Hand = (props) => {
   return (
     <div id='hand'>
-      {props.hand.map(card => <Card suit={card.suit} value={card.value} />)}
+      {props.hand.map((card, i) => <Card key={i} id={i} playCard={props.playCard} card={card} />)}
     </div>
   )
 }

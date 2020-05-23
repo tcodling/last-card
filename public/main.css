@@ -21,6 +21,10 @@ body {
     margin-right: 5px;
 }
 
+#play .card {
+    margin: 0;
+}
+
 #deck {
     width: 100px;
     height: 150px;
@@ -33,6 +37,7 @@ body {
 #hand {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -41,4 +46,5 @@ body {
     border: 1px black solid;
     border-radius: 10px;
     margin: 5px;
+    background-color: white;
 }

@@ -2,8 +2,8 @@ import React from 'react'
 
 const Card = (props) => {
   return (
-    <div class='card'>
-      <p>{props.value} {props.suit}</p>
+    <div id={props.id} onClick={props.playCard} className='card'>
+      <p>{props.card.value} {props.card.suit}</p>
     </div>
   )
 }

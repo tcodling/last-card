@@ -9,7 +9,8 @@ import cards from '../cards.json'
 class App extends React.Component {
   state = {
     deck: cards,
-    hand: []
+    hand: [],
+    play: []
   }
 
   componentDidMount = () => {
@@ -31,15 +32,23 @@ class App extends React.Component {
     })
   }
 
+  play = (event) => {
+    let currentPlay = this.state.play
+    currentPlay.unshift(this.state.hand[event.target.id])
+    this.setState({
+      play: currentPlay
+    })
+  }
+
   render() {
     return (
       <>
       <h1>Last Card</h1>
       <div id='board'>
-        <Play />
+        <Play played={this.state.play[0]} />
         <Deck draw={this.draw} cards={this.state.deck} />
       </div>
-      <Hand hand={this.state.hand} />
+      <Hand playCard={this.play} hand={this.state.hand} />
       </>
     )
   }
