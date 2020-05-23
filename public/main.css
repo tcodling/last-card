@@ -45,7 +45,7 @@ body {
     height: 150px;
     border: 1px black solid;
     border-radius: 10px;
-    margin: 5px;
+    margin: 20px -5px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -55,7 +55,7 @@ body {
 
 .card p {
     font-size: 40px;
-    margin: 0;
+    margin: 0 5px;
 }
 
 .leftValue {
