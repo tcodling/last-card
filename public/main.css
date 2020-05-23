@@ -47,4 +47,26 @@ body {
     border-radius: 10px;
     margin: 5px;
     background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card p {
+    font-size: 40px;
+    margin: 0;
+}
+
+.leftValue {
+    align-self: flex-start;
+}
+
+.rightValue {
+    align-self: flex-end;
+}
+
+.suit {
+    width: 60px;
+    height: 60px;
 }
