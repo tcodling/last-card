@@ -35,8 +35,11 @@ class App extends React.Component {
   play = (event) => {
     let currentPlay = this.state.play
     currentPlay.unshift(this.state.hand[event.target.id])
+    let newHand = this.state.hand
+    newHand.splice(newHand.indexOf(this.state.hand[event.target.id]), 1)
     this.setState({
-      play: currentPlay
+      play: currentPlay,
+      hand: newHand
     })
   }
 
