@@ -7,18 +7,33 @@ body {
     /* font-family: 'VT323', monospace; */
 }
 
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
 #board {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+#wood {
+    background-image: url(/images/wood.jpg);
+    background-size: cover;
+    height: 60vh;
+    padding: 10px;
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
+}
+
 #play {
     width: 100px;
     height: 150px;
-    border: 1px black dashed;
+    border: 2px black dashed;
     border-radius: 10px;
     margin-right: 5px;
+    background-color: rgb(64, 175, 64);
 }
 
 #play .card {
@@ -28,7 +43,7 @@ body {
 #deck {
     width: 100px;
     height: 150px;
-    border: 1px black solid;
+    border: 2px black solid;
     border-radius: 10px;
     background-image: url(./images/cardback.jpg);
     background-size: contain;
@@ -43,7 +58,7 @@ body {
 .card {
     width: 100px;
     height: 150px;
-    border: 1px black solid;
+    border: 2px black solid;
     border-radius: 10px;
     margin: 20px -5px;
     background-color: white;
@@ -69,4 +84,10 @@ body {
 .suit {
     width: 60px;
     height: 60px;
+}
+
+button {
+    display: block;
+    margin: 10px auto;
+    border: 2px black solid;
 }

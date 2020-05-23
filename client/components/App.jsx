@@ -43,15 +43,28 @@ class App extends React.Component {
     })
   }
 
+  // startGame = () => {
+  //   this.draw()
+  //   this.draw()
+  //   this.draw()
+  //   this.draw()
+  //   this.draw()
+  //   this.draw()
+  //   this.draw()
+  // }
+
   render() {
     return (
       <>
       <h1>Last Card</h1>
-      <div id='board'>
-        <Play played={this.state.play[0]} />
-        <Deck draw={this.draw} cards={this.state.deck} />
+      <div id='wood'>
+        <div id='board'>
+          <Play played={this.state.play[0]} />
+          <Deck draw={this.draw} cards={this.state.deck} />
+        </div>
+        <Hand playCard={this.play} hand={this.state.hand} />
       </div>
-      <Hand playCard={this.play} hand={this.state.hand} />
+      <button onClick={this.startGame}>Start Game</button>
       </>
     )
   }
