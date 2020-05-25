@@ -56,7 +56,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-      <h1 className='bounce-in-left'>Last Card</h1>
+      <h1 className='bounce-in-left' id='heading'>Last Card</h1>
       <div id='wood'>
         <div id='board'>
           <Play played={this.state.play[0]} />

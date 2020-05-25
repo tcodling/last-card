@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Press+Start+2P&family=VT323&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
 body {
     background-color: bisque;
     font-family: 'Londrina Solid', cursive;
+    padding: 0;
+    margin: 0;
     /* font-family: 'Press Start 2P', cursive; */
     /* font-family: 'VT323', monospace; */
+}
+
+#heading {
+    font-family: 'Slackey', cursive;
+    font-size: 80px;
+    margin: -5px
 }
 
 h1 {
@@ -33,7 +41,6 @@ h1 {
     border: 2px black dashed;
     border-radius: 10px;
     margin-right: 5px;
-    background-color: rgb(64, 175, 64);
 }
 
 #play .card {
