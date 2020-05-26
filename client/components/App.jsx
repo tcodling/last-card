@@ -3,6 +3,7 @@ import React from 'react'
 import Play from './Play'
 import Deck from './Deck'
 import Hand from './Hand'
+import Style from './Style'
 
 import cards from '../cards.json'
 
@@ -12,11 +13,20 @@ class App extends React.Component {
     hand: [],
     play: [],
     buttonText: 'Start Game',
-    draw: false
+    draw: false,
+    style: 'classic'
   }
 
   componentDidMount = () => {
     this.shuffle()
+  }
+
+  swapStyle = () => {
+    if (event.target.innerHTML === 'Pixel') {
+      document.getElementById('style').setAttribute('href', '/pixel.css')
+    } else if (event.target.innerHTML === 'Classic') {
+      document.getElementById('style').setAttribute('href', '/main.css')
+    }
   }
 
   shuffle = () => {
@@ -94,6 +104,7 @@ class App extends React.Component {
     return (
       <>
       <h1 className='bounce-in-left' id='heading'>L<span className='red'>a</span>s<span className='red'>t</span> C<span className='red'>a</span>r<span className='red'>d</span></h1>
+      <Style changeStyle={this.swapStyle} />
       <div id='wood'>
         <div id='board'>
           <Play played={this.state.play[0]} />

@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Londrina+Solid&family=Press+Start+2P&family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Slackey&display=swap');
+body {
+    background-color: black;
+    /* font-family: 'Londrina Solid', cursive; */
+    padding: 0;
+    margin: 0;
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    /* font-family: 'VT323', monospace; */
+}
+
+#heading {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 80px;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+#board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#wood {
+    background-color: green;
+    height: 60vh;
+    width: 80%;
+    margin: 0 auto;
+    border-top: 2px black solid;
+    border-bottom: 2px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#play {
+    width: 6vw;
+    height: 9vw;
+    border: 6px black dashed;
+    margin-right: 5px;
+}
+
+#play .card {
+    margin: 0;
+}
+
+#deck {
+    width: 6vw;
+    height: 9vw;
+    border: 6px black solid;
+    background-image: url(./images/cardback.jpg);
+    background-size: contain;
+}
+
+#hand {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 6vw;
+    height: 9vw;
+    border: 6px black solid;
+    margin: 20px -5px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#hand .card:hover {
+    cursor: pointer;
+    background-color: black;
+    color: white;
+}
+
+.card p {
+    font-size: 2vw;
+    margin: 0 5px;
+}
+
+.leftValue {
+    align-self: flex-start;
+}
+
+.rightValue {
+    align-self: flex-end;
+}
+
+.suit {
+    width: 50%;
+    height: 50%;
+}
+
+button {
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+    border: 2px black solid;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1vw;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: red;
+    color: white;
+}
