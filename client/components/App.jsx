@@ -34,13 +34,16 @@ class App extends React.Component {
 
   play = (event) => {
     let currentPlay = this.state.play
-    currentPlay.unshift(this.state.hand[event.target.id])
-    let newHand = this.state.hand
-    newHand.splice(newHand.indexOf(this.state.hand[event.target.id]), 1)
-    this.setState({
-      play: currentPlay,
-      hand: newHand
-    })
+    let card = this.state.hand[event.target.id]
+    if (currentPlay[0] === undefined || card.suit === currentPlay[0].suit || card.value === currentPlay[0].value) {
+      currentPlay.unshift(card)
+      let newHand = this.state.hand
+      newHand.splice(newHand.indexOf(card), 1)
+      this.setState({
+        play: currentPlay,
+        hand: newHand
+      })
+    }
   }
 
   // startGame = () => {
@@ -56,7 +59,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-      <h1 className='bounce-in-left' id='heading'>L<span class='red'>a</span>s<span class='red'>t</span> C<span class='red'>a</span>r<span class='red'>d</span></h1>
+      <h1 className='bounce-in-left' id='heading'>L<span className='red'>a</span>s<span className='red'>t</span> C<span className='red'>a</span>r<span className='red'>d</span></h1>
       <div id='wood'>
         <div id='board'>
           <Play played={this.state.play[0]} />

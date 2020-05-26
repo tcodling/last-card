@@ -31,14 +31,20 @@ h1 {
     background-image: url(/images/wood.jpg);
     background-size: cover;
     height: 60vh;
-    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
     border-top: 2px black solid;
     border-bottom: 2px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
 }
 
 #play {
-    width: 100px;
-    height: 150px;
+    width: 6vw;
+    height: 9vw;
     border: 2px black dashed;
     border-radius: 10px;
     margin-right: 5px;
@@ -49,8 +55,8 @@ h1 {
 }
 
 #deck {
-    width: 100px;
-    height: 150px;
+    width: 6vw;
+    height: 9vw;
     border: 2px black solid;
     border-radius: 10px;
     background-image: url(./images/cardback.jpg);
@@ -68,8 +74,8 @@ h1 {
 }
 
 .card {
-    width: 100px;
-    height: 150px;
+    width: 6vw;
+    height: 9vw;
     border: 2px black solid;
     border-radius: 10px;
     margin: 20px -5px;
@@ -86,7 +92,7 @@ h1 {
 }
 
 .card p {
-    font-size: 40px;
+    font-size: 2vw;
     margin: 0 5px;
 }
 
@@ -99,14 +105,22 @@ h1 {
 }
 
 .suit {
-    width: 60px;
-    height: 60px;
+    width: 50%;
+    height: 50%;
 }
 
 button {
     display: block;
     margin: 10px auto;
     border: 2px black solid;
+    border-radius: 5px;
+    font-family: 'Slackey', cursive;
+    font-size: 1vw;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(228, 223, 150);
 }
 
 .red {
