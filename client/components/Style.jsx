@@ -3,10 +3,10 @@ import React from 'react'
 class Style extends React.Component {
   render() {
     return (
-      <div>
-          <div onClick={this.props.changeStyle}>Classic</div>
-          <div onClick={this.props.changeStyle}>Pixel</div>
-      </div>
+      <ul id='styleChoice'>
+          <li onClick={this.props.changeStyle}>Classic</li>
+          <li onClick={this.props.changeStyle}>Pixel</li>
+      </ul>
     )
   }
 }

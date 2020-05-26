@@ -21,6 +21,24 @@ h1 {
     font-size: 50px;
 }
 
+#styleChoice {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+#styleChoice li {
+    margin: 0 20px;
+    font-size: 2vw;
+    border: 6px solid white;
+    padding: 10px;
+}
+
+#styleChoice li:hover {
+    background-color: green;
+    cursor: pointer;
+}
+
 #board {
     display: flex;
     justify-content: center;
@@ -49,14 +67,14 @@ h1 {
 
 #play .card {
     margin: 0;
+    color: black;
 }
 
 #deck {
     width: 6vw;
     height: 9vw;
     border: 6px black solid;
-    background-image: url(./images/cardback.jpg);
-    background-size: contain;
+    background-color: white;
 }
 
 #hand {
@@ -75,6 +93,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    color: black;
 }
 
 #hand .card:hover {
