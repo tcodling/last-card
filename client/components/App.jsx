@@ -10,7 +10,9 @@ class App extends React.Component {
   state = {
     deck: cards,
     hand: [],
-    play: []
+    play: [],
+    buttonText: 'Start Game',
+    draw: false
   }
 
   componentDidMount = () => {
@@ -23,6 +25,30 @@ class App extends React.Component {
     })
   }
 
+  changeButton = (i) => {
+    if (i === 'error') {
+      this.setState({
+        buttonText: 'You can not place that card'
+      })
+    } else if (i === 'success') {
+      this.setState({
+        buttonText: 'Good Job!'
+      })
+    } else if (i === 'start') {
+      this.setState({
+        buttonText: 'Lets go!'
+      })
+    } else if (i === 'draw') {
+      this.setState({
+        buttonText: 'Oh no'
+      })
+    } else if (i === 'win') {
+      this.setState({
+        buttonText: 'You win! Start over?'
+      })
+    }
+  }
+
   draw = () => {
     let currentHand = this.state.hand
     currentHand.push(this.state.deck[0])
@@ -30,6 +56,7 @@ class App extends React.Component {
       hand: currentHand,
       deck: this.state.deck.slice(1)
     })
+    this.changeButton('draw')
   }
 
   play = (event) => {
@@ -43,18 +70,25 @@ class App extends React.Component {
         play: currentPlay,
         hand: newHand
       })
+      this.changeButton('success')
+      if (this.state.hand.length === 0) {
+        this.changeButton('win')
+      }
+    } else {
+      this.changeButton('error')
     }
   }
 
-  // startGame = () => {
-  //   this.draw()
-  //   this.draw()
-  //   this.draw()
-  //   this.draw()
-  //   this.draw()
-  //   this.draw()
-  //   this.draw()
-  // }
+  startGame = () => {
+    let currentHand = (this.state.deck.slice(0, 7))
+    console.log(currentHand)
+    this.setState({
+      hand: currentHand,
+      deck: this.state.deck.slice(7),
+      draw: true
+    })
+    this.changeButton('start')
+  }
 
   render() {
     return (
@@ -63,11 +97,12 @@ class App extends React.Component {
       <div id='wood'>
         <div id='board'>
           <Play played={this.state.play[0]} />
-          <Deck draw={this.draw} cards={this.state.deck} />
+          <Deck cards={this.state.deck} />
         </div>
         <Hand playCard={this.play} hand={this.state.hand} />
       </div>
-      <button onClick={this.startGame}>Start Game</button>
+      <button onClick={this.startGame}>{this.state.buttonText}</button>
+      {this.state.draw ? <button onClick={this.draw}>Draw</button> : <></>}
       </>
     )
   }
