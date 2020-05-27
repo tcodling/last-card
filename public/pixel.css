@@ -85,10 +85,27 @@ h1 {
     background-position:0 0, 12.5px 0, 12.5px -12.5px, 0px 12.5px; /* Must be half of one side of the square */
 }
 
-#hand {
+#hand, #oppHand {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+#oppHand {
+    position: absolute;
+    top: 30vh;
+    right: 70vw;
+}
+
+#oppHand .card {
+    width: 4vw;
+    height: 6vw;
+    color: transparent;
+    background-size: contain;
+}
+
+#oppHand img {
+    display: none;
 }
 
 .card {

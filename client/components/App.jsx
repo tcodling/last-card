@@ -15,7 +15,7 @@ class App extends React.Component {
     oppHand: [],
     play: [],
     buttonText: "",
-    draw: false,
+    start: false,
     style: "classic",
   };
 
@@ -140,7 +140,7 @@ class App extends React.Component {
       hand: hand,
       oppHand: oppHand,
       deck: this.state.deck.slice(14),
-      draw: true,
+      start: true,
     });
     this.changeButton("start");
   };
@@ -155,21 +155,21 @@ class App extends React.Component {
         <Style changeStyle={this.swapStyle} />
         <div id="wood">
           <OppHand oppHand={this.state.oppHand} />
-          <div id="board">
-            <Play played={this.state.play[0]} />
-            <Deck cards={this.state.deck} />
-            {/* <div id='helper'>
-            <h2>{this.state.buttonText}</h2>
-          </div> */}
-          </div>
+          {this.state.start && (this.state.hand.length === 0 || this.state.oppHand.length === 0) ? 
+            this.state.hand.length === 0 ? <h1 className='win'>You Win!</h1> : <h1 className='lose'>You Lose!</h1>
+          : (
+            <div id="board">
+              <Play played={this.state.play[0]} />
+              <Deck cards={this.state.deck} />
+            </div>
+          )}
           <Hand playCard={this.play} hand={this.state.hand} />
         </div>
-        {!this.state.draw ? (
+        {!this.state.start ? (
           <button onClick={this.startGame}>Start Game</button>
         ) : (
-          <></>
+          <button onClick={this.draw}>Draw</button>
         )}
-        {this.state.draw ? <button onClick={this.draw}>Draw</button> : <></>}
       </>
     );
   }
