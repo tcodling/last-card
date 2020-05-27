@@ -5,13 +5,13 @@ const Card = (props) => {
   let suit = props.card.suit
   if (props.style === 'classic') {
     if (suit === 'hearts') {
-      image = '/images/heart.svg'
+      image = '/images/heart.png'
     } else if (suit === 'spades') {
-      image = '/images/spade.svg'
+      image = '/images/spade.png'
     } else if (suit === 'diamonds') {
-      image = '/images/diamond.svg'
+      image = '/images/diamond.png'
     } else if (suit === 'clubs') {
-      image = '/images/club.svg'
+      image = '/images/club.png'
     }
   } else if (props.style === 'pixel') {
     if (suit === 'hearts') {
