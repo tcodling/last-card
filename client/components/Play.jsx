@@ -4,7 +4,7 @@ import Card from './Card'
 
 const Play = (props) => {
   return (
-    <div id='play'>{props.played ? <Card card={props.played} /> : ''}</div>
+    <div id='play'>{props.played ? <Card style={props.style} card={props.played} /> : ''}</div>
   )
 }
 

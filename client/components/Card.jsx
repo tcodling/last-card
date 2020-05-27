@@ -3,14 +3,26 @@ import React from 'react'
 const Card = (props) => {
   let image
   let suit = props.card.suit
-  if (suit === 'hearts') {
-    image = '/images/heart.svg'
-  } else if (suit === 'spades') {
-    image = '/images/spade.svg'
-  } else if (suit === 'diamonds') {
-    image = '/images/diamond.svg'
-  } else if (suit === 'clubs') {
-    image = '/images/club.svg'
+  if (props.style === 'classic') {
+    if (suit === 'hearts') {
+      image = '/images/heart.svg'
+    } else if (suit === 'spades') {
+      image = '/images/spade.svg'
+    } else if (suit === 'diamonds') {
+      image = '/images/diamond.svg'
+    } else if (suit === 'clubs') {
+      image = '/images/club.svg'
+    }
+  } else if (props.style === 'pixel') {
+    if (suit === 'hearts') {
+      image = '/images/pixHeart.png'
+    } else if (suit === 'spades') {
+      image = '/images/pixSpade.png'
+    } else if (suit === 'diamonds') {
+      image = '/images/pixDiamond.png'
+    } else if (suit === 'clubs') {
+      image = '/images/pixClub.png'
+    }
   }
 
 

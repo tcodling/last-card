@@ -26,8 +26,14 @@ class App extends React.Component {
   swapStyle = () => {
     if (event.target.innerHTML === "Pixel") {
       document.getElementById("style").setAttribute("href", "/pixel.css");
+      this.setState({
+        style: 'pixel'
+      })
     } else if (event.target.innerHTML === "Classic") {
       document.getElementById("style").setAttribute("href", "/main.css");
+      this.setState({
+        style: 'classic'
+      })
     }
   };
 
@@ -159,11 +165,11 @@ class App extends React.Component {
             this.state.hand.length === 0 ? <h1 className='win'>You Win!</h1> : <h1 className='lose'>You Lose!</h1>
           : (
             <div id="board">
-              <Play played={this.state.play[0]} />
+              <Play style={this.state.style} played={this.state.play[0]} />
               <Deck cards={this.state.deck} />
             </div>
           )}
-          <Hand playCard={this.play} hand={this.state.hand} />
+          <Hand style={this.state.style} playCard={this.play} hand={this.state.hand} />
         </div>
         {!this.state.start ? (
           <button onClick={this.startGame}>Start Game</button>
