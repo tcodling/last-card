@@ -53,7 +53,7 @@ h1 {
     background-image: url(/images/wood.jpg);
     background-size: cover;
     height: 60vh;
-    width: 80%;
+    /* width: 80%; */
     margin: 0 auto;
     border-top: 2px black solid;
     border-bottom: 2px black solid;
@@ -61,7 +61,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 20px;
+    /* border-radius: 20px; */
 }
 
 #play {
@@ -70,6 +70,20 @@ h1 {
     border: 2px black dashed;
     border-radius: 10px;
     margin-right: 5px;
+}
+
+#helper {
+    width: 6vw;
+    height: 9vw;
+    border: 2px black solid;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1vw;
 }
 
 #play .card {
@@ -85,10 +99,28 @@ h1 {
     background-size: contain;
 }
 
-#hand {
+#hand, #oppHand {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+#oppHand {
+    position: absolute;
+    top: 30vh;
+    right: 70vw;
+}
+
+#oppHand .card {
+    width: 4vw;
+    height: 6vw;
+    color: transparent;
+    background-image: url(./images/cardback.jpg);
+    background-size: contain;
+}
+
+#oppHand img {
+    display: none;
 }
 
 .card {
