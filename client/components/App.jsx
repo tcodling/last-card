@@ -12,7 +12,7 @@ class App extends React.Component {
     deck: cards,
     hand: [],
     play: [],
-    buttonText: 'Start Game',
+    buttonText: '',
     draw: false,
     style: 'classic'
   }
@@ -103,7 +103,15 @@ class App extends React.Component {
   render() {
     return (
       <>
-      <h1 className='bounce-in-left' id='heading'>L<span className='red'>a</span>s<span className='red'>t</span> C<span className='red'>a</span>r<span className='red'>d</span></h1>
+      <h1 className='bounce-in-left' id='heading'>L
+        <span className='red'>a
+        </span>s
+        <span className='red'>t
+        </span> C
+        <span className='red'>a
+        </span>r
+        <span className='red'>d
+        </span></h1>
       <Style changeStyle={this.swapStyle} />
       <div id='wood'>
         <div id='board'>
@@ -111,8 +119,9 @@ class App extends React.Component {
           <Deck cards={this.state.deck} />
         </div>
         <Hand playCard={this.play} hand={this.state.hand} />
+        <h2>{this.state.buttonText}</h2>
       </div>
-      <button onClick={this.startGame}>{this.state.buttonText}</button>
+      {!this.state.draw ? <button onClick={this.startGame}>Start Game</button> : <></>}
       {this.state.draw ? <button onClick={this.draw}>Draw</button> : <></>}
       </>
     )
