@@ -90,12 +90,6 @@ h1 {
     flex-wrap: wrap;
 }
 
-#oppHand {
-    position: absolute;
-    top: 20vh;
-    right: 65vw;
-}
-
 #oppHand .card {
     width: 4vw;
     height: 6vw;

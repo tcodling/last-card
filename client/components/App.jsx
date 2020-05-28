@@ -14,7 +14,7 @@ class App extends React.Component {
     hand: [],
     oppHand: [],
     play: [],
-    buttonText: "",
+    // buttonText: "",
     start: false,
     style: "classic",
   };
@@ -43,29 +43,29 @@ class App extends React.Component {
     });
   };
 
-  changeButton = (i) => {
-    if (i === "error") {
-      this.setState({
-        buttonText: "You can not place that card",
-      });
-    } else if (i === "success") {
-      this.setState({
-        buttonText: "Good Job!",
-      });
-    } else if (i === "start") {
-      this.setState({
-        buttonText: "Lets go!",
-      });
-    } else if (i === "draw") {
-      this.setState({
-        buttonText: "Oh no",
-      });
-    } else if (i === "win") {
-      this.setState({
-        buttonText: "You win! Start over?",
-      });
-    }
-  };
+  // changeButton = (i) => {
+  //   if (i === "error") {
+  //     this.setState({
+  //       buttonText: "You can not place that card",
+  //     });
+  //   } else if (i === "success") {
+  //     this.setState({
+  //       buttonText: "Good Job!",
+  //     });
+  //   } else if (i === "start") {
+  //     this.setState({
+  //       buttonText: "Lets go!",
+  //     });
+  //   } else if (i === "draw") {
+  //     this.setState({
+  //       buttonText: "Oh no",
+  //     });
+  //   } else if (i === "win") {
+  //     this.setState({
+  //       buttonText: "You win! Start over?",
+  //     });
+  //   }
+  // };
 
   draw = () => {
     let currentHand = this.state.hand;
@@ -74,7 +74,7 @@ class App extends React.Component {
       hand: currentHand,
       deck: this.state.deck.slice(1),
     });
-    this.changeButton("draw");
+    // this.changeButton("draw");
     this.oppPlay();
   };
 
@@ -93,7 +93,6 @@ class App extends React.Component {
     let currentPlay = this.state.play;
     for (let i in this.state.oppHand) {
       let card = this.state.oppHand[i];
-      console.log(card);
       if (
         card.suit === currentPlay[0].suit ||
         card.value === currentPlay[0].value
@@ -128,14 +127,14 @@ class App extends React.Component {
         play: currentPlay,
         hand: newHand,
       });
-      this.changeButton("success");
+      // this.changeButton("success");
       if (this.state.hand.length === 0) {
-        this.changeButton("win");
+        // this.changeButton("win");
       }
 
       this.oppPlay();
     } else {
-      this.changeButton("error");
+      // this.changeButton("error");
     }
   };
 
@@ -148,7 +147,7 @@ class App extends React.Component {
       deck: this.state.deck.slice(14),
       start: true,
     });
-    this.changeButton("start");
+    // this.changeButton("start");
   };
 
   render() {
