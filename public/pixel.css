@@ -90,6 +90,10 @@ h1 {
     flex-wrap: wrap;
 }
 
+#helper {
+    text-align: center;
+}
+
 #oppHand .card {
     width: 4vw;
     height: 6vw;

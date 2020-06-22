@@ -73,17 +73,7 @@ h1 {
 }
 
 #helper {
-    width: 6vw;
-    height: 9vw;
-    border: 2px black solid;
-    background-color: white;
-    border-radius: 10px;
-    margin-left: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    font-size: 1vw;
 }
 
 #play .card {
@@ -171,4 +161,11 @@ button:hover {
 
 .red {
     color: red;
+}
+
+#controls {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    margin: 0 auto;
 }

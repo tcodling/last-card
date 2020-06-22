@@ -14,7 +14,7 @@ class App extends React.Component {
     hand: [],
     oppHand: [],
     play: [],
-    // buttonText: "",
+    buttonText: "",
     start: false,
     style: "classic",
   };
@@ -43,29 +43,29 @@ class App extends React.Component {
     });
   };
 
-  // changeButton = (i) => {
-  //   if (i === "error") {
-  //     this.setState({
-  //       buttonText: "You can not place that card",
-  //     });
-  //   } else if (i === "success") {
-  //     this.setState({
-  //       buttonText: "Good Job!",
-  //     });
-  //   } else if (i === "start") {
-  //     this.setState({
-  //       buttonText: "Lets go!",
-  //     });
-  //   } else if (i === "draw") {
-  //     this.setState({
-  //       buttonText: "Oh no",
-  //     });
-  //   } else if (i === "win") {
-  //     this.setState({
-  //       buttonText: "You win! Start over?",
-  //     });
-  //   }
-  // };
+  changeButton = (i) => {
+    if (i === "error") {
+      this.setState({
+        buttonText: "You can not place that card",
+      });
+    } else if (i === "success") {
+      this.setState({
+        buttonText: "Good Job!",
+      });
+    } else if (i === "start") {
+      this.setState({
+        buttonText: "Lets go!",
+      });
+    } else if (i === "draw") {
+      this.setState({
+        buttonText: "Oh no",
+      });
+    } else if (i === "win") {
+      this.setState({
+        buttonText: "You win! Start over?",
+      });
+    }
+  };
 
   draw = () => {
     let currentHand = this.state.hand;
@@ -74,7 +74,7 @@ class App extends React.Component {
       hand: currentHand,
       deck: this.state.deck.slice(1),
     });
-    // this.changeButton("draw");
+    this.changeButton("draw");
     this.oppPlay();
   };
 
@@ -127,18 +127,24 @@ class App extends React.Component {
         play: currentPlay,
         hand: newHand,
       });
-      // this.changeButton("success");
+      this.changeButton("success");
       if (this.state.hand.length === 0) {
-        // this.changeButton("win");
+        this.changeButton("win");
       }
 
       this.oppPlay();
     } else {
-      // this.changeButton("error");
+      this.changeButton("error");
     }
   };
 
   startGame = () => {
+    this.setState({
+      deck: cards,
+      hand: [],
+      oppHand: [],
+      play: []
+    })
     let hand = this.state.deck.slice(0, 7);
     let oppHand = this.state.deck.slice(7, 14);
     this.setState({
@@ -147,7 +153,7 @@ class App extends React.Component {
       deck: this.state.deck.slice(14),
       start: true,
     });
-    // this.changeButton("start");
+    this.changeButton("start");
   };
 
   render() {
@@ -159,22 +165,24 @@ class App extends React.Component {
         </h1>
         <Style changeStyle={this.swapStyle} />
         <div id="wood">
-          <OppHand oppHand={this.state.oppHand} />
           {this.state.start && (this.state.hand.length === 0 || this.state.oppHand.length === 0) ? 
-            this.state.hand.length === 0 ? <h1 className='win'>You Win!</h1> : <h1 className='lose'>You Lose!</h1>
+            this.state.hand.length === 0 ? <h1 onClick={this.startGame} className='win'>You Win! Press New Game To Start Over!</h1> : <h1 onClick={this.startGame} className='lose'>You Lose! Press New Game To Start Over!</h1>
           : (
+            <>
+            <OppHand oppHand={this.state.oppHand} />
             <div id="board">
               <Play style={this.state.style} played={this.state.play[0]} />
               <Deck cards={this.state.deck} />
             </div>
+            <Hand style={this.state.style} playCard={this.play} hand={this.state.hand} />
+            </>
           )}
-          <Hand style={this.state.style} playCard={this.play} hand={this.state.hand} />
         </div>
-        {!this.state.start ? (
-          <button onClick={this.startGame}>Start Game</button>
-        ) : (
-          <button onClick={this.draw}>Draw</button>
-        )}
+        <div id='controls'>
+          <button onClick={this.startGame}>New Game</button>
+          {this.state.start ? <button onClick={this.draw}>Draw</button> : <></>}
+        </div>
+        <h2 id='helper'>{this.state.buttonText}</h2>
       </>
     );
   }
